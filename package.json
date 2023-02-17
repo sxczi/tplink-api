@@ -1,0 +1,12 @@
+{
+  "name": "tplink-api",
+  "version": "1.0.0",
+  "main": "tplink.js",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "crypto-js": "^4.1.1",
+    "node-fetch": "^3.3.0"
+  }
+}
