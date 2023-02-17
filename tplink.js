@@ -140,15 +140,15 @@ export default class TPLink {
   }
 
   async releaseConnection() {
-    await this.httpRequest(`${this.sessionID}/userRpm/StatusRpm.htm?ReleaseIp=Release&wan=1`, `http://192.168.0.1/${sessionID}/userRpm/StatusRpm.htm`);
+    await this.httpRequest(`${this.sessionID}/userRpm/StatusRpm.htm?ReleaseIp=Release&wan=1`, `http://192.168.0.1/${this.sessionID}/userRpm/StatusRpm.htm`);
   }
 
   async renewConnection() {
-    await this.httpRequest(`${this.sessionID}/userRpm/StatusRpm.htm?RenewIp=Renew&wan=1`, `http://192.168.0.1/${sessionID}/userRpm/StatusRpm.htm`);
+    await this.httpRequest(`${this.sessionID}/userRpm/StatusRpm.htm?RenewIp=Renew&wan=1`, `http://192.168.0.1/${this.sessionID}/userRpm/StatusRpm.htm`);
   }
 
   async reboot() {
-    await this.httpRequest(`${this.sessionID}/userRpm/SysRebootRpm.htm?Reboot=Reboot`, `http://192.168.0.1/${sessionID}/userRpm/SysRebootRpm.htm`);
+    await this.httpRequest(`${this.sessionID}/userRpm/SysRebootRpm.htm?Reboot=Reboot`, `http://192.168.0.1/${this.sessionID}/userRpm/SysRebootRpm.htm`);
   }
 
   async changePassword(password) {
@@ -166,7 +166,7 @@ export default class TPLink {
   async changeAdminAccount(user, pass) {
     let passs = encodeURIComponent(btoa(crypto.MD5(pass).toString()));
 
-    await this.httpRequest(`${this.sessionID}/userRpm/ChangeLoginPwdRpm.htm?oldname=${username}&oldpassword=${encodeURIComponent(btoa(crypto.MD5(password).toString()))}&newname=${user}&newpassword=${passs}&newpassword2=${passs}&Save=Save`, `http://192.168.0.1/${sessionID}/userRpm/ChangeLoginPwdRpm.htm`);
+    await this.httpRequest(`${this.sessionID}/userRpm/ChangeLoginPwdRpm.htm?oldname=${username}&oldpassword=${encodeURIComponent(btoa(crypto.MD5(password).toString()))}&newname=${user}&newpassword=${passs}&newpassword2=${passs}&Save=Save`, `http://192.168.0.1/${this.sessionID}/userRpm/ChangeLoginPwdRpm.htm`);
 
     this.username = user;
     this.password = pass;
